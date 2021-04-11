@@ -31,7 +31,7 @@ public class FindNumber {
             System.out.println("Введите автомобильный номер");
             for (; ; ) {
 
-                long start = System.currentTimeMillis();
+                long start = System.nanoTime();
                 Scanner scanner = new Scanner(System.in);
                 String text = scanner.nextLine();
                 System.out.println("Способ прямого перебора");
@@ -41,25 +41,26 @@ public class FindNumber {
                 } else {
                     System.out.println("Такой номер не найден");
                 }
-                long finish = System.currentTimeMillis();
+                long finish = System.nanoTime();
                 System.out.println((finish - start));
                 System.out.println("====================");
                 // ============================================================
                 System.out.println("Способ с применением бинарного поиска");
-                long start1 = System.currentTimeMillis();
+                long start1 = System.nanoTime();
                 int index = Collections.binarySearch(number, text);
+                System.out.println(index);
                 if (index >= 0) {
                     System.out.println("Такой номер есть");
                 } else {
                     System.out.println("Номер отсутствует");
                 }
-                long finish1 = System.currentTimeMillis();
+                long finish1 = System.nanoTime();
                 System.out.println((finish1 - start1));
 
                 // ============================================
                 System.out.println("=============");
                 System.out.println("Поиск с помощью Hashset");
-                long start2 = System.currentTimeMillis();
+                long start2 = System.nanoTime();
                 if (numberList.contains(text))
                 {
                     System.out.println("Номер найден");
@@ -68,13 +69,12 @@ public class FindNumber {
                 {
                     System.out.println("Не найден");
                 }
-                long finish2 = System.currentTimeMillis();
+                long finish2 = System.nanoTime();
                 System.out.println((finish2 - start2));
                 // ============================================
                 System.out.println("=============");
                 System.out.println("Поиск с помощью Treeset");
-                long start3 = System.currentTimeMillis();
-                System.out.println(start3);
+                long start3 = System.nanoTime();
                 if (numberlist.contains(text))
                 {
                     System.out.println("Номер найден");
@@ -83,9 +83,9 @@ public class FindNumber {
                 {
                     System.out.println("Не найден");
                 }
-                long finish3 = System.currentTimeMillis();
-                System.out.println(finish3);
+                long finish3 = System.nanoTime();
                 System.out.println((finish3 - start3));
+
             }
 
 
